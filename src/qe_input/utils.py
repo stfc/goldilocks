@@ -144,3 +144,15 @@ def generate_kpoints_grid(structure, kspacing):
     kpoints = [math.ceil(1/x/kspacing) for x in structure.lattice.abc]
     kpoints.extend([0,0,0])
     return kpoints
+
+def generate_response(messages,client,llm_model):
+    """Generator function to stream response from Groq API"""
+    response = client.chat.completions.create(
+        model=llm_model,  # Example model, change as needed
+        messages=messages,
+        stream=True  # Enable streaming
+    )
+
+    for chunk in response:
+        if chunk.choices and chunk.choices[0].delta.content:
+            yield chunk.choices[0].delta.content
