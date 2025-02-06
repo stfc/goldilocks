@@ -1,6 +1,4 @@
-import os
 import streamlit as st
-import pandas as pd
 from openai import OpenAI
 from groq import Groq
 from utils import atomic_positions_list, generate_kpoints_grid, generate_response
@@ -15,7 +13,7 @@ if 'all_info' not in st.session_state.keys():
 
 with st.sidebar:
     llm_name_value = st.selectbox('assistant LLM', 
-                        ("gpt-4o", "gpt-4o-mini", 'gpt-3.5-turbo', 'llama-3.3-70b-versatile'), 
+                        ("gpt-4o", "gpt-4o-mini", 'gpt-3.5-turbo', 'llama-3.3-70b-versatile','mixtral-8x7b-32768','gemma2-9b-it'), 
                         index=None, 
                         placeholder='gpt-4o-mini')
 

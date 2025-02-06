@@ -1,11 +1,7 @@
 import sys
 import os
-import shutil
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src/qe_input')))
 
-import re
-import pytest
-import json
 from utils import generate_input_file
 
 CIF="""# generated using pymatgen

@@ -1,17 +1,8 @@
 import os
 import streamlit as st
-import pandas as pd
-from openai import OpenAI
-from pymatgen.core.structure import Structure
-from pymatgen.core.composition import Composition
-from pymatgen.io.cif import CifWriter
-from utils import list_of_pseudos, cutoff_limits, generate_input_file
-from data_utils import jarvis_structure_lookup, mp_structure_lookup, mc3d_structure_lookup, oqmd_strucutre_lookup
-from kspacing_model import predict_kspacing
-
+from utils import generate_input_file
 import shutil
-import json
-import time
+
 
 st.title("Generate QE input with a deterministic function")
 
@@ -89,52 +80,3 @@ if st.session_state['all_info']:
     # thread.start()
     # time.sleep(3)
     # st.components.v1.iframe(src="http://0.0.0.0:8055", height=100)
-
-    
-
-###############################################
-### LLM part to answer questions            ###
-###############################################
-
-# if not openai_api_key:
-#     st.info("Please add your OpenAI API key to continue.", icon="🗝️")
-# if openai_api_key:
-#     # Create an OpenAI client.
-#     client = OpenAI(api_key=openai_api_key)
-#     st.markdown('**You can ask agent to correct any input parameters, ask about their meaning, or generate aiida code to run calculations!**')
-#     # Create a session state variable to store the chat messages. This ensures that the
-#     # messages persist across reruns.
-#     if "messages" not in st.session_state:
-#         st.session_state.messages = []
-    
-#     # add input file content to the prompt
-#     if 'input_file' in st.session_state.keys() and 'input_file_path' in st.session_state.keys():
-#         st.session_state.messages.append({"role": "system", "content": "When generating reply take into account QE input file content:\n"\
-#                                             + st.session_state['input_file']+\
-#                                             'and its locaiton: ' + st.session_state['input_file_path']})
-#     # Display the existing chat messages via `st.chat_message`.
-#     for message in st.session_state.messages:
-#         if(message["role"]=="user" or message["role"]=="assistant"):
-#             st.markdown(message["content"])
-    
-#     # Create a chat input field to allow the user to enter a message. This will display
-#     # automatically at the bottom of the page.
-#     if prompt := st.chat_input("Do you have any questions?"):
-
-#         # Store and display the current prompt.
-#         st.session_state.messages.append({"role": "user", "content": prompt})
-#         with st.chat_message("user"):
-#             st.markdown(prompt)
-        
-#         # Generate a response using the OpenAI API.
-#         stream = client.chat.completions.create(
-#             model=st.session_state['llm_name'],
-#             messages=[{"role": m["role"], "content": m["content"]} for m in st.session_state.messages],
-#             stream=True,
-#         )
-
-#         # Stream the response to the chat using `st.write_stream`, then store it in 
-#         # session state.
-#         with st.chat_message("assistant"):
-#             response = st.write_stream(stream)
-#         st.session_state.messages.append({"role": "assistant", "content": response})

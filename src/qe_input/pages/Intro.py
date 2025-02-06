@@ -1,32 +1,17 @@
 import os
 import streamlit as st
-import pandas as pd
 import shutil
-from openai import OpenAI
 from pymatgen.core.structure import Structure
 from pymatgen.core.composition import Composition
 from pymatgen.io.cif import CifWriter
-from utils import list_of_pseudos, cutoff_limits, generate_input_file
+from utils import list_of_pseudos, cutoff_limits
 from data_utils import jarvis_structure_lookup, mp_structure_lookup, mc3d_structure_lookup, oqmd_strucutre_lookup
 from kspacing_model import predict_kspacing
-
-# st.set_page_config(
-#     page_title="Hello",
-#     page_icon="👋",
-# )
-# intro_page = st.Page("Intro.py", title="Hello", icon="👋")
-# chat_page = st.Page("pages/Chatbot_generator.py", title="Chatbot generator", icon="💬")
-# deterministic_page = st.Page("pages/Deterministic_generator.py", title="Deterministic generator", icon="⚙️")
-
-# pg = st.navigation([deterministic_page, chat_page])
-# # st.set_page_config(page_title="QE input generation")
-# pg.run()
-
 
 
 st.write("# Welcome to QE input generator! 👋")
 
-st.markdown("""With app will help you generate the input file for Quantum Espresso calculations.""")
+st.markdown("""This app will help you generate input files for Quantum Espresso calculations.""")
 
 st.sidebar.success("Provide specifications and select a way to generate input")
 
@@ -70,9 +55,6 @@ with tab2:
 if not structure_file and not input_formula:
     st.info("Please add your structure file or chemical formula to continue")
 elif input_formula:
-    # if not mp_api_key:
-    #     st.info("Please add your MP API key to check Materials Project database for the structure.", icon="🗝️")
-    # else:
     composition=Composition(input_formula)
     formula,_=composition.get_reduced_formula_and_factor()
     # may also include alexandria https://alexandria.icams.rub.de/
@@ -113,28 +95,28 @@ elif structure_file:
     if os.path.exists(save_directory):
         shutil.rmtree(save_directory, ignore_errors=True)
     os.makedirs(save_directory)
-    file_name='structure.cif'
-    file_path = os.path.join(save_directory, file_name)
+    file_path = os.path.join(save_directory, 'structure.cif')
     with open(file_path, "wb") as f:
         f.write(structure_file.getbuffer())
     structure = Structure.from_file(file_path)
 
 if structure:
-    st.session_state['structure']=structure
     save_directory = "./src/qe_input/temp/"
-    os.makedirs(save_directory, exist_ok = True)
-    st.session_state['save_directory'] = save_directory
-    file_name='structure.cif'
-    file_path = os.path.join(save_directory, file_name)
-    st.session_state['structure_file']=file_path
+    if os.path.exists(save_directory):
+        shutil.rmtree(save_directory, ignore_errors=True)
+    os.makedirs(save_directory)
+    file_path = os.path.join(save_directory, 'structure.cif')
     write_cif=CifWriter(structure)
     write_cif.write_file(file_path)
+    st.session_state['save_directory']=save_directory
+    st.session_state['structure_file']=file_path
+    st.session_state['structure']=structure
 
     composition = Composition(structure.alphabetical_formula)
     st.session_state['composition']=structure.alphabetical_formula
     pseudo_path="./src/qe_input/pseudos/"
     pseudo_family, list_of_element_files=list_of_pseudos(pseudo_path, st.session_state['functional'], 
-                                                         st.session_state['mode'], composition,save_directory)
+                                                         st.session_state['mode'], composition,st.session_state['save_directory'])
     st.session_state['pseudo_family']=pseudo_family
     st.session_state['list_of_element_files']=list_of_element_files
     st.session_state['pseudo_path']=pseudo_path
