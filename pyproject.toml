@@ -38,7 +38,8 @@ sklearn-quantile = "^0.1.1"
 torch-geometric = "^2.7.0"
 dscribe = "^2.1.2"
 huggingface-hub = "^1.2.1"
-joblib = "^1.5.2"
+joblib = "^1.4.2"
+matminer = "^0.9.3"
 
 
 [tool.poetry.urls]
