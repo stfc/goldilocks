@@ -1,5 +1,5 @@
 # Install torch first
-torch==2.5.1
+torch==2.8.0
 
 # Install PyTorch Geometric extensions from PyG wheel repository
 --find-links https://data.pyg.org/whl/torch-2.5.1+cpu.html
