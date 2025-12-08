@@ -3048,6 +3048,38 @@ files = [
 ]
 
 [[package]]
+name = "matminer"
+version = "0.9.3"
+description = "matminer is a library that contains tools for data mining in Materials Science"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "matminer-0.9.3-py3-none-any.whl", hash = "sha256:d8bc4aed58f5799eb7c49f1f08ed88e39c066bc412b194c6a92e506c0c4171e3"},
+    {file = "matminer-0.9.3.tar.gz", hash = "sha256:e5f4e638434d58f8009b05d7cd402a9287ce619bdf67b417e8af78752ad7d2c2"},
+]
+
+[package.dependencies]
+monty = ">=2023"
+numpy = ">=1.23"
+pandas = ">=1.5,<3"
+pymatgen = ">=2023"
+pymongo = ">=4.5,<5.0"
+requests = ">=2.31,<3.0"
+scikit-learn = ">=1.3,<2.0"
+sympy = ">=1.11,<2.0"
+tqdm = ">=4.66,<5.0"
+
+[package.extras]
+aflow = ["aflow"]
+citrine = ["citrination-client"]
+dev = ["black", "coverage", "coveralls", "flake8", "pylint", "pytest", "pytest-cov", "pytest-timeout", "sphinx"]
+dscribe = ["dscribe (>=2.1,<3.0)"]
+mdfforge = ["mdf-forge"]
+mpds = ["ase", "httplib2", "jmespath", "jsonschema", "ujson"]
+tests = ["aflow", "ase", "black", "citrination-client", "coverage", "coveralls", "dscribe (>=2.1,<3.0)", "flake8", "httplib2", "jmespath", "jsonschema", "mdf-forge", "pylint", "pytest", "pytest-cov", "pytest-timeout", "sphinx", "ujson"]
+
+[[package]]
 name = "matplotlib"
 version = "3.10.3"
 description = "Python plotting package"
@@ -7447,4 +7479,4 @@ cffi = ["cffi (>=1.11)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<3.13"
-content-hash = "67e017302e3a8f6c481c47b24a0b0c1f7fb32d408031a1df843aa1633dd64cae"
+content-hash = "c22547c0a0d1797b2bef6c3dcc56ea59df5a7c1d29d6b5ebc4297cae8a5c29c2"

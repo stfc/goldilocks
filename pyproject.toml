@@ -34,6 +34,11 @@ mkdocs = "^1.5"
 mkdocs-material = "^9.5"
 pytest-cov = "^6.1.1"
 coveralls = "^4.0.1"
+sklearn-quantile = "^0.1.1"
+torch-geometric = "^2.7.0"
+dscribe = "^2.1.2"
+huggingface-hub = "^1.2.1"
+joblib = "^1.5.2"
 
 
 [tool.poetry.urls]
