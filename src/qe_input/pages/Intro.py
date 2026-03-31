@@ -110,6 +110,8 @@ elif structure_file:
     if os.path.exists(temp_dir):
         shutil.rmtree(temp_dir)
     os.makedirs(temp_dir)
+    target_file_path = os.path.join(temp_dir, 'PP_references.txt')
+    shutil.copyfile("./src/qe_input/pseudos/PP_references.txt", target_file_path)
     file_path = os.path.join(temp_dir, 'structure.cif')
     with open(file_path, "wb") as f:
         f.write(structure_file.getbuffer())
@@ -140,6 +142,8 @@ if structure:
     if os.path.exists(save_directory):
         shutil.rmtree(save_directory, ignore_errors=True)
     os.makedirs(save_directory)
+    target_file_path = os.path.join(save_directory, 'PP_references.txt')
+    shutil.copyfile("./src/qe_input/pseudos/PP_references.txt", target_file_path)
     file_path = os.path.join(save_directory, 'structure.cif')
     write_cif=CifWriter(structure)
     write_cif.write_file(file_path)

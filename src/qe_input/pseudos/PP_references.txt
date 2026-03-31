@@ -1,0 +1,145 @@
+GBRV （1.0， 1.2， 1.4， 1.5): 
+@article{Garrity2014,
+  title = {Pseudopotentials for high-throughput DFT calculations},
+  volume = {81},
+  ISSN = {0927-0256},
+  url = {http://dx.doi.org/10.1016/j.commatsci.2013.08.053},
+  DOI = {10.1016/j.commatsci.2013.08.053},
+  journal = {Computational Materials Science},
+  publisher = {Elsevier BV},
+  author = {Garrity,  Kevin F. and Bennett,  Joseph W. and Rabe,  Karin M. and Vanderbilt,  David},
+  year = {2014},
+  month = jan,
+  pages = {446–452}
+}
+
+Wentzcovitch: 
+@article{Topsakal2014,
+  title = {Accurate projected augmented wave (PAW) datasets for rare-earth elements (RE=La–Lu)},
+  volume = {95},
+  ISSN = {0927-0256},
+  url = {http://dx.doi.org/10.1016/j.commatsci.2014.07.030},
+  DOI = {10.1016/j.commatsci.2014.07.030},
+  journal = {Computational Materials Science},
+  publisher = {Elsevier BV},
+  author = {Topsakal,  M. and Wentzcovitch,  R.M.},
+  year = {2014},
+  month = dec,
+  pages = {263–270}
+}
+
+SG15: 
+@article{Schlipf2015,
+  title = {Optimization algorithm for the generation of ONCV pseudopotentials},
+  volume = {196},
+  ISSN = {0010-4655},
+  url = {http://dx.doi.org/10.1016/j.cpc.2015.05.011},
+  DOI = {10.1016/j.cpc.2015.05.011},
+  journal = {Computer Physics Communications},
+  publisher = {Elsevier BV},
+  author = {Schlipf,  Martin and Gygi,  Fran\c{c}ois},
+  year = {2015},
+  month = nov,
+  pages = {36–44}
+}
+
+100PAW:
+@article{DalCorso2014,
+  title = {Pseudopotentials periodic table: From H to Pu},
+  volume = {95},
+  ISSN = {0927-0256},
+  url = {http://dx.doi.org/10.1016/j.commatsci.2014.07.043},
+  DOI = {10.1016/j.commatsci.2014.07.043},
+  journal = {Computational Materials Science},
+  publisher = {Elsevier BV},
+  author = {Dal Corso,  Andrea},
+  year = {2014},
+  month = dec,
+  pages = {337–350}
+}
+
+031PAW: 
+@misc{https://doi.org/10.48550/arxiv.1404.3015,
+  doi = {10.48550/ARXIV.1404.3015},
+  url = {https://arxiv.org/abs/1404.3015},
+  author = {Kucukbenli,  E. and Monni,  M. and Adetunji,  B. I. and Ge,  X. and Adebayo,  G. A. and Marzari,  N. and de Gironcoli,  S. and Corso,  A. Dal},
+  keywords = {Materials Science (cond-mat.mtrl-sci),  FOS: Physical sciences,  FOS: Physical sciences},
+  title = {Projector augmented-wave and all-electron calculations across the periodic table: a comparison of structural and energetic properties},
+  publisher = {arXiv},
+  year = {2014},
+  copyright = {arXiv.org perpetual,  non-exclusive license}
+}
+
+100US: 
+@article{DalCorso2014,
+  title = {Pseudopotentials periodic table: From H to Pu},
+  volume = {95},
+  ISSN = {0927-0256},
+  url = {http://dx.doi.org/10.1016/j.commatsci.2014.07.043},
+  DOI = {10.1016/j.commatsci.2014.07.043},
+  journal = {Computational Materials Science},
+  publisher = {Elsevier BV},
+  author = {Dal Corso,  Andrea},
+  year = {2014},
+  month = dec,
+  pages = {337–350}
+}
+
+031US: 
+@misc{https://doi.org/10.48550/arxiv.1404.3015,
+  doi = {10.48550/ARXIV.1404.3015},
+  url = {https://arxiv.org/abs/1404.3015},
+  author = {Kucukbenli,  E. and Monni,  M. and Adetunji,  B. I. and Ge,  X. and Adebayo,  G. A. and Marzari,  N. and de Gironcoli,  S. and Corso,  A. Dal},
+  keywords = {Materials Science (cond-mat.mtrl-sci),  FOS: Physical sciences,  FOS: Physical sciences},
+  title = {Projector augmented-wave and all-electron calculations across the periodic table: a comparison of structural and energetic properties},
+  publisher = {arXiv},
+  year = {2014},
+  copyright = {arXiv.org perpetual,  non-exclusive license}
+}
+
+Dojo: 
+@article{vanSetten2018,
+  title = {The PseudoDojo: Training and grading a 85 element optimized norm-conserving pseudopotential table},
+  volume = {226},
+  ISSN = {0010-4655},
+  url = {http://dx.doi.org/10.1016/j.cpc.2018.01.012},
+  DOI = {10.1016/j.cpc.2018.01.012},
+  journal = {Computer Physics Communications},
+  publisher = {Elsevier BV},
+  author = {van Setten,  M.J. and Giantomassi,  M. and Bousquet,  E. and Verstraete,  M.J. and Hamann,  D.R. and Gonze,  X. and Rignanese,  G.-M.},
+  year = {2018},
+  month = may,
+  pages = {39–54}
+}
+
+THEOS: 
+@article{prandini2018precision,
+   title={Precision and efficiency in solid-state pseudopotential calculations},
+   author={Prandini, Gianluca and Marrazzo, Antimo and Castelli, Ivano E and Mounet, Nicolas and Marzari, Nicola},
+   journal={npj Computational Materials},
+   volume={4},
+   number={1},
+   pages={72},
+   year={2018},
+   issn = {2057-3960},
+   url = {https://www.nature.com/articles/s41524-018-0127-2},
+   doi = {10.1038/s41524-018-0127-2},
+   note = {\href{http://materialscloud.org/sssp}{http://materialscloud.org/sssp}},
+   publisher={Nature Publishing Group UK London}
+}
+
+MalteSachs:
+@article{Sachs2021,
+  title = {DFT-Guided Crystal Structure Redetermination and Lattice Dynamics of the Intermetallic Actinoid Compound UIr},
+  volume = {60},
+  ISSN = {1520-510X},
+  url = {http://dx.doi.org/10.1021/acs.inorgchem.1c02578},
+  DOI = {10.1021/acs.inorgchem.1c02578},
+  number = {21},
+  journal = {Inorganic Chemistry},
+  publisher = {American Chemical Society (ACS)},
+  author = {Sachs,  Malte and Ivlev,  Sergei I. and Etter,  Martin and Conrad,  Matthias and Karttunen,  Antti J. and Kraus,  Florian},
+  year = {2021},
+  month = oct,
+  pages = {16686–16699}
+}

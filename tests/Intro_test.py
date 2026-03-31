@@ -399,7 +399,12 @@ def test_pseudos(ELEMENTS):
     """
     assert os.path.exists('./src/qe_input/pseudos/')
     assert os.path.exists('./src/qe_input/pseudo_cutoffs/')
-    list_of_pseudo_types=os.listdir('./src/qe_input/pseudos/')
+    pseudos_root = './src/qe_input/pseudos/'
+    list_of_pseudo_types = [
+        name
+        for name in os.listdir(pseudos_root)
+        if os.path.isdir(os.path.join(pseudos_root, name))
+    ]
     if ".DS_Store" in list_of_pseudo_types:
         list_of_pseudo_types.remove(".DS_Store")
     list_of_cutoffs=os.listdir('./src/qe_input/pseudo_cutoffs/')
@@ -434,7 +439,7 @@ def test_pseudos(ELEMENTS):
             assert switch_cutoff, f"Missing cutoff file for {functional}-{mode} combination"
 
     for folder in list_of_pseudo_types:
-        list_of_files=os.listdir('./src/qe_input/pseudos/'+folder)
+        list_of_files = os.listdir(os.path.join(pseudos_root, folder))
         represented_elements=[]
         for file in list_of_files:
             if(file[1]=='.' or file[1]=='_' or file[1]=='-'):
