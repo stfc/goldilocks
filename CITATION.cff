@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "goldilocks"
+message: "If you use this software, please cite it as below."
+type: software
+
+authors:
+  - family-names: Patyukova
+    given-names: Elena
+  - family-names: Yin
+    given-names: Junwen
+  - family-names: Basak
+    given-names: Susmita
+  - family-names: Sanchez
+    given-names: Samuel
+  - family-names: Elena
+    given-names: Alin-Marin
+  - family-names: Teobaldi
+    given-names: Gilberto
+
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20324660
+repository-code: 'https://github.com/stfc/goldilocks'
+abstract: Tools for generation of input files with optimised k-point meshes for Quantum Espresso self-consistent field single point total energy calculations
+license: CC BY 4.0
